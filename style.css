@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    max-height: 100vh;
+    color: #f1f1f1;
+    font-family: Inter, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #141414;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    max-height: 80vh;
+    max-width: 40vw;
+    align-items: center;
+    align-content: center;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.text-content h1 {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 900;
+}
+
+.text-content p {
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.inputs {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.inputs select {
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    background-color: #191919;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.inputs button {
+    background-color: red;
+    color: #141414;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 25px;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.inputs button:hover {
+    border: 2px solid;
+    border-color: red;
+    background-color: transparent;
+    color: #f1f1f1;
+}
+
+.inputs .select-box {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    gap: 0.75rem; 
+}
+
+.inputs .select-box label {
+    font-size: 0.75rem;
+    text-align: left;
+    font-weight: 400;
+    color: gray;
+}
+
+footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    bottom: 0;
+    gap: 0;
+}
+
+footer div {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+footer h3 {
+    color: gray;
+    font-size: 1rem;
+}
+
+footer p, span {
+    color: gray;
+    font-size: 0.75rem;
+}
+
+footer span {
+    text-decoration-line: underline;
+}
+
+#img a {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: gray;
+}
