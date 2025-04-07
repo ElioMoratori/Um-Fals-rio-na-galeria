@@ -130,10 +130,20 @@ footer p, span {
 
 footer span {
     text-decoration-line: underline;
+    cursor: pointer;
+}
+
+footer a {
+    color: gray;
 }
 
 #img a {
     text-decoration: none;
     text-decoration-line: none;
     color: gray;
+}
+
+.disabled {
+    display: none;
+    z-index: 0;
 }
