@@ -57,9 +57,10 @@ main {
     gap: 1.8rem;
 }
 
-.inputs #select {
+.inputs input {
     text-decoration: none;
     border: none;
+    min-height: 3rem;
     border-radius: 8px;
     background-color: #191919;
     padding: 0.5rem;
