@@ -57,7 +57,7 @@ main {
     gap: 1.8rem;
 }
 
-.inputs select {
+.inputs #select {
     text-decoration: none;
     border: none;
     border-radius: 8px;

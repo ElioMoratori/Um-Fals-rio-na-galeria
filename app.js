@@ -4,7 +4,7 @@ const pegaTítulo = document.querySelector('h1')
 const pegaTexto = document.querySelector('p')
 const botao = document.querySelector('button')
 const divSeletores = document.querySelector('.select-box')
-const seletor = document.querySelector('select')
+const seletor = document.querySelector('#select')
 const inputs = document.querySelector('.inputs')
 
 
@@ -78,12 +78,12 @@ function proximoJogador() {
 }
 
 
-seletor.addEventListener('click', ()=> {
+function selecionar() {
     quantidadeDeJogadores = seletor.value
     jogador = parseInt(quantidadeDeJogadores)
     faker = parseInt((Math.random() * quantidadeDeJogadores + 1))
     selecionaPalavra()
-})
+}
 
 
 function jogar() {
@@ -91,7 +91,7 @@ function jogar() {
         alert('Escolha um número de jogadores')
         return
     }
-    
+    selecionar()
     divSeletores.classList.remove('select-box')
     divSeletores.classList.add('disabled')
     jogadoresRodada++
