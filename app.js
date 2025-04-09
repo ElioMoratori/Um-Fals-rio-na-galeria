@@ -4,12 +4,17 @@ const pegaTítulo = document.querySelector('h1')
 const pegaTexto = document.querySelector('p')
 const botao = document.querySelector('button')
 const divSeletores = document.querySelector('.select-box')
+const seletor = document.querySelector('select')
+const inputs = document.querySelector('.inputs')
+
 
 let listaPalavras
-let pegaJogadores = document.querySelector('select').value
 let palavraEscolhida
-let quantidadeJogadores
 
+let quantidadeDeJogadores
+let Jogador
+let jogadoresRodada = 0
+let faker
 
 async function pegaPalavras() {
         try {
@@ -32,24 +37,58 @@ function selecionaPalavra() {
 }
 
 function exibePalavraEscolhida() {
+    if (jogadoresRodada == faker) {
+        pegaTítulo.textContent = "Falsário"
+        pegaTítulo.style.color = 'red'
+        pegaTexto.innerHTML = `A dica é <b>${palavraEscolhida.dica}</b>`
+        botao.textContent = 'Próximo Jogador'
+        botao.setAttribute('onclick','proximoJogador()')
+        jogadoresRodada++
+        return
+    }
+    
     pegaTítulo.textContent = palavraEscolhida.palavra
     pegaTexto.innerHTML = `A dica é <b>${palavraEscolhida.dica}</b>`
     botao.textContent = 'Próximo Jogador'
-    botao.onclick = proximoJogador
+    botao.setAttribute('onclick','proximoJogador()')  
+    jogadoresRodada++
+
 }
+
 
 function proximoJogador() {
-    pegaTítulo.textContent = "Jogador nº"
-    pegaTexto.innerHTML = "Clique quando estiver pronto"
-    botao.textContent = 'Exibir a palavra'
-    botao.onclick = exibePalavraEscolhida
+    if(jogadoresRodada <= jogador) {
+        pegaTítulo.style.color = '#f1f1f1'
+        pegaTítulo.textContent = "Jogador nº " + jogadoresRodada
+        pegaTexto.innerHTML = "Clique quando estiver pronto"
+        botao.textContent = 'Exibir a palavra'
+        botao.setAttribute('onclick','exibePalavraEscolhida()')
+        return
+    }
+
+    divSeletores.classList.add('select-box')
+    divSeletores.classList.remove('disabled')
+    pegaTítulo.textContent = 'Um Falsário na Galeria'
+    pegaTexto.textContent = 'Um aplicativo para jogar "A Fake Artist Goes to New York" sem a necessidade de moderador.'
+    botao.textContent = 'Começar'
+    botao.setAttribute('onclick', 'jogar()')
+    seletor.value = ""
+    jogadoresRodada = 0
+    jogador = null
 }
+
+
+seletor.addEventListener('click', ()=> {
+    quantidadeDeJogadores = seletor.value
+    jogador = parseInt(quantidadeDeJogadores)
+    faker = parseInt((Math.random() * quantidadeDeJogadores + 1))
+    selecionaPalavra()
+})
+
 
 function jogar() {
-    let quantidadeJogadores = document.querySelector('select').value
     divSeletores.classList.remove('select-box')
     divSeletores.classList.add('disabled')
-    selecionaPalavra()
+    jogadoresRodada++
     proximoJogador()
 }
-
