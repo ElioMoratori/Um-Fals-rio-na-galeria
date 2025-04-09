@@ -87,6 +87,11 @@ seletor.addEventListener('click', ()=> {
 
 
 function jogar() {
+    if (seletor.value == '') {
+        alert('Escolha um número de jogadores')
+        return
+    }
+    
     divSeletores.classList.remove('select-box')
     divSeletores.classList.add('disabled')
     jogadoresRodada++
