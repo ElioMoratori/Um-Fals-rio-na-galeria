@@ -68,6 +68,7 @@ function proximoJogador() {
 
     divSeletores.classList.add('select-box')
     divSeletores.classList.remove('disabled')
+    pegaTítulo.style.color = '#f1f1f1'
     pegaTítulo.textContent = 'Um Falsário na Galeria'
     pegaTexto.textContent = 'Um aplicativo para jogar "A Fake Artist Goes to New York" sem a necessidade de moderador.'
     botao.textContent = 'Começar'
